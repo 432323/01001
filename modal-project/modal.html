@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Web3 Modal Test</title>
+    <link rel="stylesheet" href="modal.css" type="text/css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, minimal-ui" />
+    <meta name="msapplication-tap-highlight" content="no"/>
+    <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="modal.js" defer></script>
+</head>
+<body>
+    <!-- Web3 Icon to open Drawer -->
+    <div id="web3-icon" onclick="toggleDrawer()">
+        <img src="modal-project/web3-icon.png" alt="Web3 Icon">
+    </div>
+
+    <!-- Drawer Modal -->
+    <div id="web3-drawer" class="drawer">
+        <div class="drawer-content">
+            <span class="close" id="closeDrawer">&times;</span>
+            <div id="walletInfo">
+                <div id="defaultInfo">
+                    <div class="balance">Balance: <span id="walletBalance">--</span></div>
+                    <div class="address">
+                        <div class="prefix">Address:</div>
+                        <span id="walletAddress">
+                            <span class="shortened">--</span>
+                            <span class="full" style="display: none;">--</span>
+                        </span>
+                        <button class="copy-button hidden" onclick="copyAddress()">
+                            <svg class="copy-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1.1 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+                        </button>
+                    </div>
+                </div>
+                <div id="notificationMessage" style="display: none;">Your notification here</div>
+            </div>
+            <div id="dashboard-buttons">
+                <button id="connectWallet">Connect Wallet</button>
+                <button id="submitScore">Submit Score</button>
+                <button id="fetchLeaderboard">Leaderboard</button>
+                <button id="initiateTransactionButton">
+                    <span id="initiateTransactionText">Send Transaction</span>
+                    <div id="loadingCarousel" class="loading-carousel" style="display: none;"></div>
+                </button>
+                                       
+            </div>
+        </div>
+    </div>
+    
+    <div id="leaderboard" class="hidden">
+        <h2>Leaderboard</h2>
+        <div id="leaderboardContent"></div>
+    </div>
+    <div id="notification" style="display: none;"></div>
+</body>
+</html>
